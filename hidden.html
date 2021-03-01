@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Basics of JavaScript
+    </title>
+</head>
+
+<body>
+
+    <h1>Hidden things by Ramu Vallapurapu</h1>
+    <h2>Getting input</h2>
+
+
+    <form>
+        <label for="form1_age">Enter the secret word </label>
+        <input type="password" id="form1_password" name="form1_password" value="Secret"> <br>
+
+        <label for="form1_nick">Enter a guess </label>
+        <input type="text" id="form1_guess" name="form1_guess" autofocus> <br>
+
+        <input type="button" onclick="processGuess()" value="Check the guess">
+    </form>
+
+    <p id="result">This text will be replaced </p>
+
+    <div>
+        <img src="images/lilly.jpg" id="output-image" style="height: 200px; width: 200px;" onclick="rotateImage()">
+
+    </div>
+
+    <script>
+        var correct = 0;
+        var wrong = 0;
+
+        function processGuess() {
+
+            console.log("Getting form values")
+            password = document.getElementById("form1_password").value
+            guess = document.getElementById("form1_guess").value
+            out = document.getElementById("result")
+            if (password == guess) {
+                correct += 1;
+                alert("Congratulations");
+                out.innerHTML = "Correct Count" + correct;
+            }
+            else {
+                wrong += 1;
+                alert("Sorry");
+                out.innerHTML = "Wrong Count" + wrong;
+            }
+        }
+
+        var currentImage = 0;
+        function rotateImage() {
+            switch (currentImage) {
+                case 0:
+
+                    document.getElementById("output-image").src = "images/lotus.jpg";
+                    currentImage = 1;
+                    break;
+                case 1:
+
+                    document.getElementById("output-image").src = "images/vaccinium.jpg";
+                    currentImage = 2;
+
+                    break;
+                case 2:
+
+                    document.getElementById("output-image").src = "images/lilly.jpg";
+                    currentImage = 0;
+                    break;
+                default:
+                    document.getElementById("output-image").src = "images/lotus.jpg";
+
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
