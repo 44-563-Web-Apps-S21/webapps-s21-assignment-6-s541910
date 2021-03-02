@@ -3,39 +3,50 @@
 
 <head>
     <title>Arithmetic Example</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
 
     <h2>Ramu Vallapurapu Computers</h2>
 
-    <form>
-        <label for="form1_number1">Enter a number </label>
-        <input type="number" id="number1" name="form1_number1" value=10> <br>
-
-        <label for="form1_number2">Enter a number </label>
-        <input type="number" id="number2" name="form1_number2" value=2> <br>
-
+    <form class="card" style="width: 24rem; padding:20px">
+        <div class="form-group">
+            <label for="form1_number1">Enter a number </label>
+            <input type="number" id="number1" name="form1_number1" value=10> <br>
+        </div>
+        <div class="form-group">
+            <label for="form1_number2">Enter a number </label>
+            <input type="number" id="number2" name="form1_number2" value=2> <br>
+        </div>
         <input type="button" onclick="permutations()" value="Get values from form">
     </form>
-
+    </div>
 
     <p id="result">This text will be replaced </p>
-    <form>
-        <input type="radio" id="arithmetic" name="form1_addition" value="plus" onclick="processRadio()">
-        <label for="form1_addition">+</label></br>
+    <div class="container">
+        <form>
+            <input type="radio" id="arithmetic" name="form1_addition" value="plus" onclick="processRadio()">
+            <label for="form1_addition">+</label></br>
 
-        <input type="radio" id="arithmetic" name="form1_subraction" value="minus" onclick="processRadio()">
-        <label for="form1_subraction">-</label></br>
+            <input type="radio" id="arithmetic" name="form1_subraction" value="minus" onclick="processRadio()">
+            <label for="form1_subraction">-</label></br>
 
-        <input type="radio" id="arithmetic" name="form1_multiplication" value="times" onclick="processRadio()">
-        <label for="form1_multiplication">*</label></br>
+            <input type="radio" id="arithmetic" name="form1_multiplication" value="times" onclick="processRadio()">
+            <label for="form1_multiplication">*</label></br>
 
-        <input type="radio" id="arithmetic" name="form1_divison" value="divide" onclick="processRadio()">
-        <label for="form1_divison">/</label></br>
-    </form>
+            <input type="radio" id="arithmetic" name="form1_divison" value="divide" onclick="processRadio()">
+            <label for="form1_divison">/</label></br>
+        </form>
 
-
+    </div>
     <p id="radio-result">This text will be replaced </p>
 
     <script>
@@ -57,15 +68,12 @@
             number1 = parseInt(document.getElementById("number1").value);
             number2 = parseInt(document.getElementById("number2").value);
             arithmetic_value = document.getElementById("arithmetic").value
-
             out = document.getElementById("radio-result")
             switch (arithmetic_value) {
                 case "plus":
-
                     output = (number1 + number2);
                     break;
                 case "minus":
-
                     output = (number1 - number2);
                     break;
                 case "times":
