@@ -25,16 +25,28 @@
 
 
     </form>
-
-
     <p id="result">This text will be replaced </p>
+    <form>
+
+        <label for="form2_property">Enter a property </label>
+        <input type="text" id="form2_property" name="orm2_property" value="color"> <br>
+
+        <label for="form2_value">Enter a value </label>
+        <input type="text" id="form2_value" name="form2_value"> <br>
+
+        <input type="button" onclick="updatebear()" value="Update the bear">
+    </form>
+
+
+
+    <p id="update_result">This text will be replaced </p>
 
     <script>
         var my_bear;
         function startBear() {
 
             my_bear = "";
-          
+
             form1_hat_checked = document.getElementById("form1_hat").checked
             form1_scarf_checked = document.getElementById("form1_scarf").checked
             form1_shirt_checked = document.getElementById("form1_shirt").checked
@@ -44,6 +56,16 @@
 
             out.innerHTML = my_bear
         }
+
+        function updatebear() {
+            my_bear = "";
+            out = document.getElementById("update_result")
+            form2_property = document.getElementById("form2_property").value
+            form2_value = document.getElementById("form2_value").value
+            my_bear = form2_property + ":" + form2_value;
+            out.innerHTML = my_bear
+        }
+        
     </script>
 
 </body>
