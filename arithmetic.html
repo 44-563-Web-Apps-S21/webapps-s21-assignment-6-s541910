@@ -21,24 +21,60 @@
 
 
     <p id="result">This text will be replaced </p>
+    <form>
+        <input type="radio" id="arithmetic" name="form1_addition" value="plus" onclick="processRadio()">
+        <label for="form1_addition">+</label></br>
+
+        <input type="radio" id="arithmetic" name="form1_subraction" value="minus" onclick="processRadio()">
+        <label for="form1_subraction">-</label></br>
+
+        <input type="radio" id="arithmetic" name="form1_multiplication" value="times" onclick="processRadio()">
+        <label for="form1_multiplication">*</label></br>
+
+        <input type="radio" id="arithmetic" name="form1_divison" value="divide" onclick="processRadio()">
+        <label for="form1_divison">/</label></br>
+    </form>
+
+
+    <p id="radio-result">This text will be replaced </p>
 
     <script>
 
         function permutations() {
             var product = 1;
             var i;
-
             number1 = document.getElementById("number1").value
             number2 = document.getElementById("number2").value
 
             for (i = number1; i >= ((number1 - number2) + 1); i--) {
-
                 product = product * i;
-
-
             }
             out = document.getElementById("result")
-            out.innerHTML = product;
+            out.innerHTML = product
+        }
+        function processRadio() {
+            var output;
+            number1 = parseInt(document.getElementById("number1").value);
+            number2 = parseInt(document.getElementById("number2").value);
+            arithmetic_value = document.getElementById("arithmetic").value
+
+            out = document.getElementById("radio-result")
+            switch (arithmetic_value) {
+                case "plus":
+
+                    output = (number1 + number2);
+                    break;
+                case "minus":
+
+                    output = (number1 - number2);
+                    break;
+                case "times":
+                    output = (number1 * number2);
+                    break;
+                case "divide":
+                    output = (number1 / number2);
+            }
+            out.innerHTML = output;
 
         }
     </script>

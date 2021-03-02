@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Checkboxes Example
+    </title>
+</head>
+
+<body>
+
+    <h2>Ramu Vallapurapu builds a bear</h2>
+
+    <form>
+        <label for="form1_hat">hat </label>
+        <input type="checkbox" id="form1_hat" name="form1_hat" value=hat> <br>
+
+        <label for="form1_scarf">Scarf </label>
+        <input type="checkbox" id="form1_scarf" name="form1_scarf" value=scarf> <br>
+
+        <label for="form1_shirt">Shirt</label>
+        <input type="checkbox" id="form1_shirt" name="form1_shirt" value="shirt"> <br>
+
+        <input type="button" onclick="startBear()" value="Start a bear">
+
+
+    </form>
+
+
+    <p id="result">This text will be replaced </p>
+
+    <script>
+        var my_bear;
+        function startBear() {
+
+            my_bear = "";
+          
+            form1_hat_checked = document.getElementById("form1_hat").checked
+            form1_scarf_checked = document.getElementById("form1_scarf").checked
+            form1_shirt_checked = document.getElementById("form1_shirt").checked
+            my_bear = "hat : " + form1_hat_checked + " scarf: " + form1_scarf_checked + " shirt: " + form1_shirt_checked;
+
+            out = document.getElementById("result")
+
+            out.innerHTML = my_bear
+        }
+    </script>
+
+</body>
+
+</html>
